@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">AndroidLab2</string>
+    <string name="app_name">Meme Creator</string>
+    <string name="other_welcome_text">Two Image/Top Text Only</string>
+    <string name="navigate_button_text">Top Text</string>
 </resources>
