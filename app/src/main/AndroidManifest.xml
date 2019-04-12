@@ -33,7 +33,8 @@
         <activity android:name=".GenerateButton" />
         <activity android:name=".ColorButton" />
         <activity android:name=".TextButton" />
-        <activity android:name=".SecondTextButton"></activity>
+        <activity android:name=".SecondTextButton" />
+        <activity android:name=".OneImageTwo"></activity>
     </application>
 
 </manifest>
