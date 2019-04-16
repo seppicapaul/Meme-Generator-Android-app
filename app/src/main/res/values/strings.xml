@@ -22,5 +22,5 @@
     <string name="second_button_text">Second Text</string>
     <string name="color_button_text">Color</string>
 
-
+    <string name="toolbar_back_button"></string>
 </resources>

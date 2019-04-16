@@ -5,9 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TextButton">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Text Button Page"/>
+        android:layout_height="match_parent"
+        android:text="Text Button Page"
+        android:gravity="center"/>
 </android.support.constraint.ConstraintLayout>

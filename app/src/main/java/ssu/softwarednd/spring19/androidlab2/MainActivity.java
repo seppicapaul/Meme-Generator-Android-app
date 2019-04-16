@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
     private Button twoImageTopTextButton;
@@ -24,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
         oneImageTopTextButton = findViewById(R.id.one_image_top_text_button);
         oneImageBottomTextButton = findViewById(R.id.one_image_bottom_text_button);
         oneImageTwoTextButton = findViewById(R.id.one_image_two_text_button);
+
+        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        TextView mTitle = toolbar.findViewById(R.id.toolbar_title);
+        setSupportActionBar(toolbar);
+        mTitle.setText(toolbar.getTitle());
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
 
         twoImageTopTextButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -72,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }
 

@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/default_padding"
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -34,17 +36,12 @@
         android:id="@+id/two_image_two_text_button"
         android:text="@string/two_image_two_text_button_text"
         />
-    <!---
-</LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    --><TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/one_image"
-    android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/one_image"
+        android:gravity="center"/>
 
     <Button
         android:layout_width="match_parent"
