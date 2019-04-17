@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private Button twoImageBothTextButton;
     private Button oneImageTopTextButton;
     private Button oneImageBottomTextButton;
+    private Button oneImageTwoTextButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         twoImageBothTextButton = findViewById(R.id.two_image_two_text_button);
         oneImageTopTextButton = findViewById(R.id.one_image_top_text_button);
         oneImageBottomTextButton = findViewById(R.id.one_image_bottom_text_button);
+        oneImageTwoTextButton = findViewById(R.id.one_image_two_text_button);
 
         twoImageTopTextButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -59,6 +61,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(MainActivity.this, OneImageBottom.class);
+                startActivity(intent);
+            }
+        });
+
+        oneImageTwoTextButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(MainActivity.this, OneImageTwo.class);
                 startActivity(intent);
             }
         });

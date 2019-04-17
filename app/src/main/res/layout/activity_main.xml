@@ -8,28 +8,28 @@
     android:orientation="vertical">
 
 
-
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/two_image"
+        android:gravity="center"
         />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/two_image_top_text_button"
         android:text="@string/two_image_top_text_button_text" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/two_image_bottom_text_button"
         android:text="@string/two_image_bottom_text_button_text"
         />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/two_image_two_text_button"
         android:text="@string/two_image_two_text_button_text"
@@ -41,23 +41,30 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     --><TextView
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/one_image" />
+    android:text="@string/one_image"
+    android:gravity="center"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/one_image_top_text_button"
         android:text="@string/one_image_top_text_button_text"
         />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/one_image_bottom_text_button"
         android:text="@string/one_image_bottom_text_button_text"
         />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/one_image_two_text_button"
+        android:text="@string/one_image_two_text_button_text"/>
 
 
 

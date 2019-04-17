@@ -1,25 +1,25 @@
 package ssu.softwarednd.spring19.androidlab2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
-public class TwoImageTop extends AppCompatActivity {
+public class OneImageTwo extends AppCompatActivity {
 
-    private Button back_button, generate_button, background_button, foreground_button, text_button, color_button;
+    private Button back_button, generate_button, background_button, foreground_button, text_button, color_button, second_text_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.two_image_top);
+        setContentView(R.layout.activity_one_image_two);
 
         back_button = findViewById(R.id.back_button);
         back_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent back = new Intent(TwoImageTop.this, MainActivity.class);
+                Intent back = new Intent(OneImageTwo.this, MainActivity.class);
                 startActivity(back);
             }
         });
@@ -28,8 +28,8 @@ public class TwoImageTop extends AppCompatActivity {
         generate_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                    Intent generate = new Intent(TwoImageTop.this, TwoImageTop.class);
-                    startActivity(generate);
+                Intent generate = new Intent(OneImageTwo.this, GenerateButton.class);
+                startActivity(generate);
             }
         });
 
@@ -37,34 +37,36 @@ public class TwoImageTop extends AppCompatActivity {
         background_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent background = new Intent(TwoImageTop.this, BackgroundImage.class);
+                Intent background = new Intent(OneImageTwo.this, BackgroundImage.class);
                 startActivity(background);
             }
         });
 
-        foreground_button = findViewById(R.id.foreground_button);
-        foreground_button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent foreground = new Intent(TwoImageTop.this, ForegroundImage.class);
-                startActivity(foreground);
-            }
-        });
 
         text_button = findViewById(R.id.text_button);
         text_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(TwoImageTop.this, TextButton.class);
+                Intent intent = new Intent(OneImageTwo.this, TextButton.class);
                 startActivity(intent);
             }
         });
+
+        second_text_button = findViewById(R.id.second_text_button);
+        second_text_button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(OneImageTwo.this, SecondTextButton.class);
+                startActivity(intent);
+            }
+        });
+
 
         color_button = findViewById(R.id.color_button);
         color_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(TwoImageTop.this, ColorButton.class);
+                Intent intent = new Intent(OneImageTwo.this, ColorButton.class);
                 startActivity(intent);
             }
         });
