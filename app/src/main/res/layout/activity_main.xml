@@ -13,10 +13,11 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:text="@string/two_image"
-        android:gravity="center"
+        android:gravity="center|bottom"
         android:textColor="@color/white"
+        android:textSize="25dp"
         />
 
     <HorizontalScrollView
@@ -28,43 +29,47 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
             android:padding="@dimen/default_padding">
 
             <Button
+                android:gravity="bottom|center"
                 android:id="@+id/two_image_top_text_button"
                 android:layout_width="250dp"
                 android:layout_height="200dp"
-                android:background="@color/colorPrimaryDark"
+                android:background="@drawable/two_image_top"
                 android:text="@string/two_image_top_text_button_text"
-                android:textColor="@color/white" />
+                android:textColor="@color/colorAccent" />
 
             <Button
+                android:gravity="bottom|center"
                 android:id="@+id/two_image_bottom_text_button"
                 android:layout_width="250dp"
                 android:layout_height="200dp"
-                android:background="@color/colorPrimaryDark"
+                android:background="@drawable/two_image_botttom"
                 android:elevation="0dp"
                 android:text="@string/two_image_bottom_text_button_text"
-                android:drawableTop="@drawable/two_image_botttom"
-                android:textColor="@color/white" />
+                android:textColor="@color/colorAccent" />
 
             <Button
+                android:gravity="bottom|center"
                 android:id="@+id/two_image_two_text_button"
                 android:layout_width="250dp"
                 android:layout_height="200dp"
-                android:background="@color/colorPrimaryDark"
+                android:background="@drawable/two_image_two"
                 android:text="@string/two_image_two_text_button_text"
-                android:textColor="@color/white" />
+                android:textColor="@color/colorAccent" />
         </LinearLayout>
 
     </HorizontalScrollView>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:text="@string/one_image"
         android:textColor="@color/white"
-        android:gravity="center"/>
+        android:gravity="center|bottom"
+        android:textSize="25dp"/>
 
     <HorizontalScrollView
         android:id="@+id/scrollView2"
@@ -72,29 +77,40 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:padding="@dimen/default_padding"
+            android:background="@color/colorPrimary"
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
     <Button
+        android:gravity="bottom|center"
         android:layout_width="250dp"
         android:layout_height="200dp"
+        android:background="@drawable/one_image_top"
         android:id="@+id/one_image_top_text_button"
         android:text="@string/one_image_top_text_button_text"
+        android:textColor="@color/colorAccent"
         />
 
     <Button
+        android:gravity="center|bottom"
         android:layout_width="250dp"
         android:layout_height="200dp"
+        android:background="@drawable/one_image_bottom"
         android:id="@+id/one_image_bottom_text_button"
         android:text="@string/one_image_bottom_text_button_text"
+        android:textColor="@color/colorAccent"
         />
 
     <Button
+        android:gravity="bottom|center"
         android:layout_width="250dp"
         android:layout_height="200dp"
+        android:background="@drawable/one_image_two"
         android:id="@+id/one_image_two_text_button"
-        android:text="@string/one_image_two_text_button_text"/>
+        android:text="@string/one_image_two_text_button_text"
+        android:textColor="@color/colorAccent"/>
 
         </LinearLayout>
     </HorizontalScrollView>
