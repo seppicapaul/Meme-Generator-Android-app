@@ -1,14 +1,17 @@
 package ssu.softwarednd.spring19.androidlab2;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class OneImageTwo extends AppCompatActivity {
 
-    private Button back_button, generate_button, background_button, foreground_button, text_button, color_button, second_text_button;
+    private Button back_button, generate_button, background_button, foreground_button, color_button;
+    private EditText text_button, second_text_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,22 +47,8 @@ public class OneImageTwo extends AppCompatActivity {
 
 
         text_button = findViewById(R.id.text_button);
-        text_button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent intent = new Intent(OneImageTwo.this, TextButton.class);
-                startActivity(intent);
-            }
-        });
 
         second_text_button = findViewById(R.id.second_text_button);
-        second_text_button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent intent = new Intent(OneImageTwo.this, SecondTextButton.class);
-                startActivity(intent);
-            }
-        });
 
 
         color_button = findViewById(R.id.color_button);
@@ -67,8 +56,24 @@ public class OneImageTwo extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(OneImageTwo.this, ColorButton.class);
-                startActivity(intent);
+                startActivityForResult(intent, 1);
+
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                int red = data.getIntExtra("red", 0);
+                int green = data.getIntExtra("green", 0);
+                int blue = data.getIntExtra("blue", 0);
+                color_button.setBackgroundColor(Color.rgb(red, green, blue));
+                color_button.setText("");
+            }
+        }
     }
 }

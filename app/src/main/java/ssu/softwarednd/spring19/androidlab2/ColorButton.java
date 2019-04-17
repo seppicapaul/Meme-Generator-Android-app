@@ -1,9 +1,12 @@
 package ssu.softwarednd.spring19.androidlab2;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -19,6 +22,8 @@ public class ColorButton extends AppCompatActivity {
     private SeekBar red_color;
     private SeekBar green_color;
     private SeekBar blue_color;
+
+    private Button choose;
 
     private int red = 0;
     private int green = 0;
@@ -39,6 +44,8 @@ public class ColorButton extends AppCompatActivity {
         red_progress = findViewById(R.id.red_progress);
         green_progress = findViewById(R.id.green_progress);
         blue_progress = findViewById(R.id.blue_progress);
+
+        choose = findViewById(R.id.choose_button);
 
         sample_text.setTypeface(Typeface.createFromAsset(getAssets(),"impact.ttf"));
 
@@ -108,6 +115,19 @@ public class ColorButton extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) { }
 
+        });
+
+        choose.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("red", red);
+                resultIntent.putExtra("green", green);
+                resultIntent.putExtra("blue", blue);
+
+                setResult(RESULT_OK, resultIntent);
+                finish();
+            }
         });
     }
 }

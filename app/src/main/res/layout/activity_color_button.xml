@@ -114,5 +114,15 @@
         app:layout_constraintStart_toEndOf="@+id/green_progress"
         app:layout_constraintTop_toBottomOf="@+id/sample_text" />
 
+    <Button
+        android:id="@+id/choose_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Choose"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/blue_seekBar"
+        tools:layout_editor_absoluteX="0dp" />
+
 
 </android.support.constraint.ConstraintLayout>
