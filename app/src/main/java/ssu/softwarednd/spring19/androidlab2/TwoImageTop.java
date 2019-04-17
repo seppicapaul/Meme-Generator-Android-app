@@ -64,7 +64,7 @@ public class TwoImageTop extends AppCompatActivity {
         color_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(TwoImageTop.this, TwoImageTop.class);
+                Intent intent = new Intent(TwoImageTop.this, ColorButton.class);
                 startActivity(intent);
             }
         });
