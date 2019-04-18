@@ -3,69 +3,121 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/default_padding"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/black">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:text="@string/two_image"
-        android:gravity="center"
+        android:gravity="center|bottom"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
         />
 
-    <Button
-        android:layout_width="match_parent"
+    <HorizontalScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/two_image_top_text_button"
-        android:text="@string/two_image_top_text_button_text" />
+        >
 
-    <Button
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/teal"
+            >
+
+            <Button
+                android:layout_margin="10dp"
+                android:gravity="center|bottom"
+                android:id="@+id/two_image_top_text_button"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:background="@color/gray"
+                android:text="@string/two_image_top_text_button_text"
+                android:textColor="@color/black" />
+
+            <Button
+                android:layout_margin="10dp"
+                android:gravity="bottom|center"
+                android:id="@+id/two_image_bottom_text_button"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:elevation="0dp"
+                android:background="@color/gray"
+                android:text="@string/two_image_bottom_text_button_text"
+                android:textColor="@color/black" />
+
+            <Button
+                android:layout_margin="10dp"
+                android:gravity="bottom|center"
+                android:id="@+id/two_image_two_text_button"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:background="@color/gray"
+                android:text="@string/two_image_two_text_button_text"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/two_image_bottom_text_button"
-        android:text="@string/two_image_bottom_text_button_text"
-        />
+        android:layout_height="80dp"
+        android:text="@string/one_image"
+        android:textColor="#FFFFFF"
+        android:gravity="center|bottom"
+        android:textSize="25dp"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/two_image_two_text_button"
-        android:text="@string/two_image_two_text_button_text"
-        />
-    <!---
-</LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    --><TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/one_image"
-    android:gravity="center"/>
+    <HorizontalScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/one_image_top_text_button"
-        android:text="@string/one_image_top_text_button_text"
-        />
+        <LinearLayout
+            android:background="@color/teal"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/one_image_bottom_text_button"
-        android:text="@string/one_image_bottom_text_button_text"
-        />
+            <Button
+                android:layout_margin="10dp"
+                android:gravity="bottom|center"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:background="@color/gray"
+                android:id="@+id/one_image_top_text_button"
+                android:text="@string/one_image_top_text_button_text"
+                android:textColor="@color/black"
+                />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/one_image_two_text_button"
-        android:text="@string/one_image_two_text_button_text"/>
+            <Button
+                android:layout_margin="10dp"
+                android:gravity="center|bottom"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:background="@color/gray"
+                android:id="@+id/one_image_bottom_text_button"
+                android:text="@string/one_image_bottom_text_button_text"
+                android:textColor="@color/black"
+                />
 
+            <Button
+                android:layout_margin="10dp"
+                android:gravity="bottom|center"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:background="@color/gray"
+                android:id="@+id/one_image_two_text_button"
+                android:text="@string/one_image_two_text_button_text"
+                android:textColor="@color/black"/>
 
+        </LinearLayout>
+    </HorizontalScrollView>
 
 </LinearLayout>
