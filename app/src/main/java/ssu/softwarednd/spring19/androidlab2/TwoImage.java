@@ -8,21 +8,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class OneImageBottom extends AppCompatActivity {
+public class TwoImage extends AppCompatActivity {
 
     private Button back_button, generate_button, background_button, color_button;
-    private EditText text_button;
+    private EditText text_button, second_text_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_one_image_bottom);
+        setContentView(R.layout.activity_two_image);
 
         back_button = findViewById(R.id.back_button);
         back_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent back = new Intent(OneImageBottom.this, MainActivity.class);
+                Intent back = new Intent(TwoImage.this, MainActivity.class);
                 startActivity(back);
             }
         });
@@ -31,7 +31,7 @@ public class OneImageBottom extends AppCompatActivity {
         generate_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent generate = new Intent(OneImageBottom.this, GenerateButton.class);
+                Intent generate = new Intent(TwoImage.this, GenerateButton.class);
                 startActivity(generate);
             }
         });
@@ -40,19 +40,20 @@ public class OneImageBottom extends AppCompatActivity {
         background_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent background = new Intent(OneImageBottom.this, BackgroundImage.class);
+                Intent background = new Intent(TwoImage.this, BackgroundImage.class);
                 startActivity(background);
             }
         });
 
-
         text_button = findViewById(R.id.text_button);
+
+        second_text_button = findViewById(R.id.second_text_button);
 
         color_button = findViewById(R.id.color_button);
         color_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(OneImageBottom.this, ColorButton.class);
+                Intent intent = new Intent(TwoImage.this, ColorButton.class);
                 startActivityForResult(intent, 1);
 
             }

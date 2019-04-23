@@ -23,18 +23,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".SelectedImage" />
-        <activity android:name=".TwoImageTop" />
         <activity android:name=".BackgroundImage" />
         <activity android:name=".ForegroundImage" />
-        <activity android:name=".TwoImageBottom" />
-        <activity android:name=".TwoImageTwo" />
-        <activity android:name=".OneImageTop" />
-        <activity android:name=".OneImageBottom" />
+        <activity android:name=".TwoImage" />
         <activity android:name=".GenerateButton" />
         <activity android:name=".ColorButton" />
         <activity android:name=".TextButton" />
         <activity android:name=".SecondTextButton" />
-        <activity android:name=".OneImageTwo"></activity>
+        <activity android:name=".OneImage"></activity>
     </application>
 
 </manifest>
