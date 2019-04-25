@@ -8,21 +8,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class TwoImageTwo extends AppCompatActivity {
+public class OneImage extends AppCompatActivity {
 
-    private Button back_button, generate_button, background_button, foreground_button, color_button;
+    private Button back_button, generate_button, background_button, color_button;
     private EditText text_button, second_text_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_two_image_two);
+        setContentView(R.layout.activity_one_image);
 
         back_button = findViewById(R.id.back_button);
         back_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent back = new Intent(TwoImageTwo.this, MainActivity.class);
+                Intent back = new Intent(OneImage.this, MainActivity.class);
                 startActivity(back);
             }
         });
@@ -31,7 +31,7 @@ public class TwoImageTwo extends AppCompatActivity {
         generate_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent generate = new Intent(TwoImageTwo.this, GenerateButton.class);
+                Intent generate = new Intent(OneImage.this, GenerateButton.class);
                 startActivity(generate);
             }
         });
@@ -40,29 +40,22 @@ public class TwoImageTwo extends AppCompatActivity {
         background_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent background = new Intent(TwoImageTwo.this, BackgroundImage.class);
+                Intent background = new Intent(OneImage.this, BackgroundImage.class);
                 startActivity(background);
             }
         });
 
-        foreground_button = findViewById(R.id.foreground_button);
-        foreground_button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent foreground = new Intent(TwoImageTwo.this, ForegroundImage.class);
-                startActivity(foreground);
-            }
-        });
 
         text_button = findViewById(R.id.text_button);
 
         second_text_button = findViewById(R.id.second_text_button);
 
+
         color_button = findViewById(R.id.color_button);
         color_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(TwoImageTwo.this, ColorButton.class);
+                Intent intent = new Intent(OneImage.this, ColorButton.class);
                 startActivityForResult(intent, 1);
 
             }
