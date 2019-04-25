@@ -6,10 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".GenerateButton">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +21,6 @@
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:paddingTop="45dp"
         android:layout_width="400dp"
         android:layout_height="340dp"
         tools:layout_editor_absoluteX="5dp"

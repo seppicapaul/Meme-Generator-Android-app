@@ -16,7 +16,7 @@ import java.io.FileOutputStream;
 
 public class GenerateButton extends AppCompatActivity {
 
-    private Button generate, back_button;
+    private Button generate;
     private View content;
     private File save_location;
     private Bitmap bitmap;
@@ -28,14 +28,6 @@ public class GenerateButton extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generate_button);
-
-        back_button = findViewById(R.id.back_button);
-        back_button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                finish();
-            }
-        });
 
         display = findViewById(R.id.display);
         content = findViewById(R.id.relativeLayout);
