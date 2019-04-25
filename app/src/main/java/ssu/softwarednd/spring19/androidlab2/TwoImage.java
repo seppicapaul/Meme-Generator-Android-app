@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 public class TwoImage extends AppCompatActivity {
 
-    private Button back_button, generate_button, background_button, color_button;
+    private Button back_button, generate_button, background_button, color_button, foreground_button;
     private EditText text_button, second_text_button;
 
     @Override
@@ -56,6 +56,15 @@ public class TwoImage extends AppCompatActivity {
                 Intent intent = new Intent(TwoImage.this, ColorButton.class);
                 startActivityForResult(intent, 1);
 
+            }
+        });
+
+        foreground_button = findViewById(R.id.foreground_button);
+        foreground_button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent foreground = new Intent(TwoImage.this, ForegroundImage.class);
+                startActivity(foreground);
             }
         });
     }
