@@ -48,26 +48,11 @@ public class GenerateButton extends AppCompatActivity {
                 } finally {
                     content.setDrawingCacheEnabled(false);
                 }
-                content.setDrawingCacheEnabled(true);
-                bitmap = content.getDrawingCache();
-                save_location = new File(getFilesDir(), "temp_name_2");
-                try {
-                    FileOutputStream ostream = new FileOutputStream(save_location);
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 10, ostream);
-                    ostream.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                } finally {
-                    content.setDrawingCacheEnabled(false);
-                }
                 generate.setText("Done");
-                try {
-                    save_location = new File(getFilesDir(), fileList()[2]);
-                    bitmap = BitmapFactory.decodeFile(save_location.getAbsolutePath());
-                    display.setImageBitmap(bitmap);
-                } catch (Exception NullPointerException) {
-                    generate.setText(Integer.toString(fileList().length));
-                }
+
+                save_location = new File(getFilesDir(), fileList()[0]);
+                bitmap = BitmapFactory.decodeFile(save_location.getAbsolutePath());
+                display.setImageBitmap(bitmap);
             }
         });
 
