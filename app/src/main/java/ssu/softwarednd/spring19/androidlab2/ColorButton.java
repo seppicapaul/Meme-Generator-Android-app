@@ -23,7 +23,7 @@ public class ColorButton extends AppCompatActivity {
     private SeekBar green_color;
     private SeekBar blue_color;
 
-    private Button choose, back_button;
+    private Button choose;
 
     private int red = 0;
     private int green = 0;
@@ -69,14 +69,6 @@ public class ColorButton extends AppCompatActivity {
 
         });
 
-
-        back_button = findViewById(R.id.back_button);
-        back_button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                finish();
-            }
-        });
 
         red_color.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override

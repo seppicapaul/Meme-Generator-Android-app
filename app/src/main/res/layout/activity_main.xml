@@ -5,18 +5,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="@color/black">
+    android:background="#FFFFFF">
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/main_toolbar"/>
+        layout="@layout/toolbar" />
 
     <TextView
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Choose a Layout"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="30dp"/>
 
     <Button
@@ -32,7 +32,7 @@
         android:layout_width="250dp"
         android:layout_height="30dp"
         android:text="One Image"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="20dp"/>
 
     <Button
@@ -40,9 +40,8 @@
         android:id="@+id/two_image"
         android:layout_width="250dp"
         android:layout_height="225dp"
+        android:background="@drawable/foreground"
         android:layout_margin="10dp"
-        android:background="@drawable/picture"
-        android:foreground="@drawable/foreground"
         android:gravity="bottom|center"
         />
     <TextView
@@ -50,6 +49,6 @@
         android:layout_width="250dp"
         android:layout_height="30dp"
         android:text="Two Image"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="20dp"/>
 </LinearLayout>

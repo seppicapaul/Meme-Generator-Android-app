@@ -10,22 +10,13 @@ import android.widget.EditText;
 
 public class TwoImage extends AppCompatActivity {
 
-    private Button back_button, generate_button, background_button, color_button, foreground_button;
+    private Button generate_button, background_button, color_button, foreground_button;
     private EditText text_button, second_text_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_image);
-
-        back_button = findViewById(R.id.back_button);
-        back_button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent back = new Intent(TwoImage.this, MainActivity.class);
-                startActivity(back);
-            }
-        });
 
         generate_button = findViewById(R.id.generate_button);
         generate_button.setOnClickListener(new View.OnClickListener(){
