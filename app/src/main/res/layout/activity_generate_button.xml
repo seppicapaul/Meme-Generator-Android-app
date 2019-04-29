@@ -29,6 +29,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@+id/color"
+            android:id="@+id/topText"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@+id/color_button"
+            android:id="@+id/bottomText"/>
+<!--
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -47,9 +73,9 @@
             android:layout_height="60dp"
             android:text="Not copywrite at all"
             android:textSize="40dp"/>
-
+-->
     </RelativeLayout>
-
+<!--
     <Button
         android:id="@+id/generate"
         android:layout_width="wrap_content"
@@ -62,6 +88,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
+
     <ImageView
         android:id="@+id/display"
         android:layout_width="400dp"
@@ -69,5 +96,5 @@
         android:layout_marginStart="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/generate" />
-
+-->
 </android.support.constraint.ConstraintLayout>

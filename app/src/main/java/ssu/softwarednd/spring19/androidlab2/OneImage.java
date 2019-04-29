@@ -12,6 +12,7 @@ public class OneImage extends AppCompatActivity {
 
     private Button generate_button, background_button, color_button;
     private EditText text_button, second_text_button;
+    private int red, blue, green;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,18 @@ public class OneImage extends AppCompatActivity {
         generate_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                String topText = text_button.getText().toString();
+                String bottomText = second_text_button.getText().toString();
+
+                Bundle bundle = new Bundle();
+                bundle.putString("TOP_TEXT", topText);
+                bundle.putString("BOTTOM_TEXT", bottomText);
+                bundle.putInt("RED", red);
+                bundle.putInt("GREEN", green);
+                bundle.putInt("BLUE", blue);
+
                 Intent generate = new Intent(OneImage.this, GenerateButton.class);
+                generate.putExtras(bundle);
                 startActivity(generate);
             }
         });
@@ -59,9 +71,9 @@ public class OneImage extends AppCompatActivity {
 
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
-                int red = data.getIntExtra("red", 0);
-                int green = data.getIntExtra("green", 0);
-                int blue = data.getIntExtra("blue", 0);
+                red = data.getIntExtra("red", 0);
+                green = data.getIntExtra("green", 0);
+                blue = data.getIntExtra("blue", 0);
                 color_button.setBackgroundColor(Color.rgb(red, green, blue));
                 color_button.setText("");
             }
