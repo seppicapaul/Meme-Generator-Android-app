@@ -3,6 +3,7 @@
     package="ssu.softwarednd.spring19.androidlab2">
 
     <!-- app permissions -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <!-- application components -->
     <application
         android:allowBackup="true"
