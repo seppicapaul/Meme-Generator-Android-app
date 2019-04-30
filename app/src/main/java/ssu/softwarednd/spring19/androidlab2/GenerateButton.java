@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,7 +33,7 @@ public class GenerateButton extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generate_button);
-        /*
+
 
         display = findViewById(R.id.display);
         content = findViewById(R.id.relativeLayout);
@@ -43,7 +44,7 @@ public class GenerateButton extends AppCompatActivity {
             public void onClick(View view){
                 content.setDrawingCacheEnabled(true);
                 bitmap = content.getDrawingCache();
-                save_location = new File(getFilesDir(), "temp_name");
+                save_location = new File(getFilesDir(), "temp_name"); //change this to date:time
                 try {
                     FileOutputStream ostream = new FileOutputStream(save_location);
                     bitmap.compress(Bitmap.CompressFormat.PNG, 10, ostream);
@@ -60,7 +61,7 @@ public class GenerateButton extends AppCompatActivity {
                 display.setImageBitmap(bitmap);
             }
         });
-     */
+
 /*
         save_button = findViewById(R.id.save_button);
         topText = findViewById(R.id.topText);
@@ -72,20 +73,22 @@ public class GenerateButton extends AppCompatActivity {
                 startActivity(save);
             }
         });*/
+
         Bundle bundle = getIntent().getExtras();
 
-        String top_text = bundle.getString("TOP_TEXT");
-        String bottom_text = bundle.getString("BOTTOM_TEXT");
-        int red = bundle.getInt("Red");
-        int green = bundle.getInt("Green");
-        int blue = bundle.getInt("Blue");
+        String top_text = bundle.getString("TOP_TEXT", "");
+        String bottom_text = bundle.getString("BOTTOM_TEXT", "");
+        int red = bundle.getInt("RED", 0);
+        int green = bundle.getInt("GREEN", 255);
+        int blue = bundle.getInt("BLUE", 0);
 
+        topText = findViewById(R.id.topText);
 
+        topText.setTypeface(Typeface.createFromAsset(getAssets(),"impact.ttf"));
         topText.setText(top_text);
-        bottomText.setText(bottom_text);
-
-        topText.setBackgroundColor(Color.rgb(red, green, blue));
-        bottomText.setBackgroundColor(Color.rgb(red, green, blue));
+//        bottomText.setText(bottom_text);
+        topText.setTextColor(Color.rgb(red, green, blue));
+      //  bottomText.setTextColor(Color.rgb(red, green, blue));
 
 
 
