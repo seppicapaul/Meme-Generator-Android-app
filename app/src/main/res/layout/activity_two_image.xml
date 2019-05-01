@@ -27,7 +27,7 @@
                 android:id="@+id/text_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/text_button_text" />
+                android:hint="Bottom Text"/>
 
             <EditText
                 android:id="@+id/second_text_button"
