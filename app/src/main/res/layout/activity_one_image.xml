@@ -38,12 +38,15 @@
         </LinearLayout>
 
         <Button
+            android:text="Color"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="@drawable/color_button_shape"
+
             android:id="@+id/color_button"
             android:layout_width="85dp"
-            android:layout_height="match_parent"
-            android:background="#000000"
-            android:text="text color"
-            android:textColor="#FFFFFF" />
+            android:layout_height="match_parent" />
     </LinearLayout>
 
     <LinearLayout

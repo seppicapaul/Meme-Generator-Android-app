@@ -74,8 +74,9 @@ public class OneImage extends AppCompatActivity {
                 red = data.getIntExtra("red", 0);
                 green = data.getIntExtra("green", 0);
                 blue = data.getIntExtra("blue", 0);
-                color_button.setBackgroundColor(Color.rgb(red, green, blue));
-                color_button.setText("");
+                color_button.setTextColor(Color.rgb(red,green,blue));
+                //color_button.setBackgroundColor(Color.rgb(red, green, blue));
+                //color_button.setText("");
             }
         }
     }
