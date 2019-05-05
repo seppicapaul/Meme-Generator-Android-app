@@ -39,7 +39,7 @@ public class GenerateButton extends AppCompatActivity {
         setContentView(R.layout.activity_generate_button);
 
 
-        display = findViewById(R.id.display);
+        //       display = findViewById(R.id.display);
         content = findViewById(R.id.relativeLayout);
 
         generate = findViewById(R.id.generate);
@@ -62,7 +62,7 @@ public class GenerateButton extends AppCompatActivity {
 
                 save_location = new File(getFilesDir(), fileList()[0]);
                 bitmap = BitmapFactory.decodeFile(save_location.getAbsolutePath());
-                display.setImageBitmap(bitmap);
+                //     display.setImageBitmap(bitmap);
             }
         });
 
@@ -88,12 +88,16 @@ public class GenerateButton extends AppCompatActivity {
         String url = bundle.getString("URL");
 
         topText = findViewById(R.id.topText);
+        bottomText = findViewById(R.id.bottomText);
 
         topText.setTypeface(Typeface.createFromAsset(getAssets(),"impact.ttf"));
+        bottomText.setTypeface(Typeface.createFromAsset(getAssets(),"impact.ttf"));
+
         topText.setText(top_text);
-        //bottomText.setText(bottom_text);
+
+        bottomText.setText(bottom_text);
         topText.setTextColor(Color.rgb(red, green, blue));
-        //bottomText.setTextColor(Color.rgb(red, green, blue));
+        bottomText.setTextColor(Color.rgb(red, green, blue));
         Picasso.get().load(url).resize(1000, 1000)
                 .centerCrop().into(display);
 

@@ -21,6 +21,7 @@
     <string name="text_button_text">Text</string>
     <string name="second_button_text">Second Text</string>
     <string name="color_button_text">Color</string>
+    <string name="save_image_text">Save Image</string>
 
 
 </resources>
