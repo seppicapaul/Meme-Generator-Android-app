@@ -13,8 +13,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.File;
 import java.io.FileOutputStream;
+
 
 public class GenerateButton extends AppCompatActivity {
 
@@ -26,6 +29,7 @@ public class GenerateButton extends AppCompatActivity {
     private TextView topText;
     private TextView bottomText;
     private Button save_button;
+
 
 
 
@@ -81,15 +85,17 @@ public class GenerateButton extends AppCompatActivity {
         int red = bundle.getInt("RED", 0);
         int green = bundle.getInt("GREEN", 255);
         int blue = bundle.getInt("BLUE", 0);
+        String url = bundle.getString("URL");
 
         topText = findViewById(R.id.topText);
 
         topText.setTypeface(Typeface.createFromAsset(getAssets(),"impact.ttf"));
         topText.setText(top_text);
-//        bottomText.setText(bottom_text);
+        //bottomText.setText(bottom_text);
         topText.setTextColor(Color.rgb(red, green, blue));
-      //  bottomText.setTextColor(Color.rgb(red, green, blue));
-
+        //bottomText.setTextColor(Color.rgb(red, green, blue));
+        Picasso.get().load(url).resize(1000, 1000)
+                .centerCrop().into(display);
 
 
 
