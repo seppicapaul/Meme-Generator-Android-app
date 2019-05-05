@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class OneImage extends AppCompatActivity {
 
@@ -44,7 +45,7 @@ public class OneImage extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Intent background = new Intent(OneImage.this, BackgroundImage.class);
-                startActivity(background);
+                startActivityForResult(background, 2);
             }
         });
 
@@ -76,6 +77,12 @@ public class OneImage extends AppCompatActivity {
                 blue = data.getIntExtra("blue", 0);
                 color_button.setBackgroundColor(Color.rgb(red, green, blue));
                 color_button.setText("");
+            }
+        }
+        else if (requestCode == 2){
+            if (resultCode == RESULT_OK) {
+                String url = data.getStringExtra(BackgroundImage.imgurl);
+                Toast.makeText(this, url, Toast.LENGTH_LONG).show();
             }
         }
     }

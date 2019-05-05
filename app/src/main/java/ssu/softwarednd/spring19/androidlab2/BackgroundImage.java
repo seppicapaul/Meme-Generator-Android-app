@@ -1,5 +1,6 @@
 package ssu.softwarednd.spring19.androidlab2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,8 +20,8 @@ public class BackgroundImage extends AppCompatActivity {
 
     private EditText searchEditText;
     private Button searchButton;
-
     private RecyclerView recyclerView;
+    static final String imgurl = "URL";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,15 @@ public class BackgroundImage extends AppCompatActivity {
                 task.setImgurListener(new ImgurSearchAsyncTask.IMListener() {
                     @Override
                     public void onIMCallback(List<ImgurModel> models) {
-                        ImgurViewAdapter adapter = new ImgurViewAdapter(models);
+                        ImgurViewAdapter adapter = new ImgurViewAdapter(models, new ImgurViewAdapter.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(ImgurModel item) {
+                                Intent imintent = new Intent();
+                                imintent.putExtra(imgurl, item.getLink());
+                                setResult(RESULT_OK, imintent);
+                                finish();
+                            }
+                        });
                         recyclerView.setAdapter(adapter);
 
                 }
@@ -49,6 +58,8 @@ public class BackgroundImage extends AppCompatActivity {
                 task.execute(searchEditText.getText().toString());
             }
         });
+
+
     }
 }
 
