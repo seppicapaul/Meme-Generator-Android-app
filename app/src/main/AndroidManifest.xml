@@ -24,8 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SelectedImage" />
-        <activity android:name=".BackgroundImage" />
-        <activity android:name=".ForegroundImage" />
+        <activity android:name=".Image" />
         <activity android:name=".TwoImage" />
         <activity android:name=".GenerateButton" />
         <activity android:name=".ColorButton" />
