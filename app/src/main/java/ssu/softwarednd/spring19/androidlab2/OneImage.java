@@ -14,6 +14,9 @@ public class OneImage extends AppCompatActivity {
     private Button generate_button, background_button, color_button;
     private EditText text_button, second_text_button;
     private int red, blue, green;
+    private String url;
+    private static final int color_return = 1;
+    private static final int image_return = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class OneImage extends AppCompatActivity {
                 bundle.putInt("RED", red);
                 bundle.putInt("GREEN", green);
                 bundle.putInt("BLUE", blue);
+                bundle.putString("URL", url);
 
                 Intent generate = new Intent(OneImage.this, GenerateButton.class);
                 generate.putExtras(bundle);
@@ -44,8 +48,8 @@ public class OneImage extends AppCompatActivity {
         background_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent background = new Intent(OneImage.this, BackgroundImage.class);
-                startActivityForResult(background, 2);
+                Intent background = new Intent(OneImage.this, Image.class);
+                startActivityForResult(background, image_return);
             }
         });
 
@@ -70,7 +74,7 @@ public class OneImage extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1) {
+        if (requestCode == color_return) {
             if (resultCode == RESULT_OK) {
                 red = data.getIntExtra("red", 0);
                 green = data.getIntExtra("green", 0);
@@ -79,9 +83,9 @@ public class OneImage extends AppCompatActivity {
                 color_button.setText("");
             }
         }
-        else if (requestCode == 2){
+        else if (requestCode == image_return){
             if (resultCode == RESULT_OK) {
-                String url = data.getStringExtra(BackgroundImage.imgurl);
+                url = data.getStringExtra(Image.imgurl);
                 Toast.makeText(this, url, Toast.LENGTH_LONG).show();
             }
         }

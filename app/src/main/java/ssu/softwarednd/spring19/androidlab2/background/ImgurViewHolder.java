@@ -28,7 +28,7 @@ public class ImgurViewHolder extends RecyclerView.ViewHolder {
     public void bindView(final ImgurModel model, final ImgurViewAdapter.OnItemClickListener listener) {
 
         //ImageNameTextView.setText(model.getImgurName());
-        Picasso.get().load(String.format("%s.jpg", model.getLink())).resize(1000, 1000)
+        Picasso.get().load(model.getLink()).resize(1000, 1000)
                 .centerCrop().into(ImageURLTextView);
         //imageurl.setText(model.getLink());
         ImageURLTextView.setOnClickListener(new View.OnClickListener() {
