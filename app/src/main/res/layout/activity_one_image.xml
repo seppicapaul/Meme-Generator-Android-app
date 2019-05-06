@@ -13,47 +13,65 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:paddingTop="55dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/text_button"
-                android:layout_width="match_parent"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
-                android:hint="Top Text" />
+                android:hint="Top Text"
+                android:textSize="27dp"/>
 
-            <EditText
-                android:id="@+id/second_text_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Bottom Text" />
+            <Button
+                android:text="Color"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:background="@drawable/color_button_shape"
+                android:id="@+id/color_button_1"
+                android:layout_width="85dp"
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 
-        <Button
-            android:text="Color"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:background="@drawable/color_button_shape"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/second_text_button"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:hint="Bottom Text"
+                android:textSize="27dp"/>
 
-            android:id="@+id/color_button"
-            android:layout_width="85dp"
-            android:layout_height="match_parent" />
+            <Button
+                android:text="Color"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:background="@drawable/color_button_shape"
+                android:id="@+id/color_button_2"
+                android:layout_width="85dp"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingTop="145dp"
+        android:paddingTop="200dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="312dp">
 

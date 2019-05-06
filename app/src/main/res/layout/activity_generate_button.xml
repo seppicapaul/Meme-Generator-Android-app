@@ -36,44 +36,20 @@
 
 
         <ImageView
-            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/display_one"
             android:scaleType="fitXY" />
-        <!--
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:textColor="@+id/color"
-                    android:text="hey"
-                    android:id="@+id/topText"
-                    />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:textColor="@color/black"
-                    android:text="sup"
-                    android:id="@+id/bottomText"/>
-        -->
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/mushroom" />
-        <!--
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    tools:layout_editor_abosluteX="200dp"
-                    tools:layout_editor_absoulteY="200dp"
-                    />
-        -->
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            tools:layout_editor_abosluteX="200dp"
+            tools:layout_editor_absoulteY="200dp"
+            android:id="@+id/display_two"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_gravity="center"
@@ -108,14 +84,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
-
-    <!--
-        <ImageView
-            android:id="@+id/display"
-            android:layout_width="400dp"
-            android:layout_height="340dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/generate" />
-    -->
 </android.support.constraint.ConstraintLayout>

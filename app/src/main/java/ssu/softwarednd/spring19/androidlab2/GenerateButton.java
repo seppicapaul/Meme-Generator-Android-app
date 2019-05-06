@@ -25,7 +25,7 @@ public class GenerateButton extends AppCompatActivity {
     private View content;
     private File save_location;
     private Bitmap bitmap;
-    private ImageView display;
+    private ImageView display_one, display_two;
     private TextView topText;
     private TextView bottomText;
     private Button save_button;
@@ -82,13 +82,19 @@ public class GenerateButton extends AppCompatActivity {
 
         String top_text = bundle.getString("TOP_TEXT", "");
         String bottom_text = bundle.getString("BOTTOM_TEXT", "");
-        int red = bundle.getInt("RED", 0);
-        int green = bundle.getInt("GREEN", 255);
-        int blue = bundle.getInt("BLUE", 0);
-        String url = bundle.getString("URL");
+        int red1 = bundle.getInt("RED1", 0);
+        int green1 = bundle.getInt("GREEN1", 0);
+        int blue1 = bundle.getInt("BLUE1", 0);
+        int red2 = bundle.getInt("RED2", 0);
+        int green2 = bundle.getInt("GREEN2", 0);
+        int blue2 = bundle.getInt("BLUE2", 0);
+        String url1 = bundle.getString("URL1", "");
+        String url2 = bundle.getString("URL2", "");
 
         topText = findViewById(R.id.topText);
         bottomText = findViewById(R.id.bottomText);
+        display_one = findViewById(R.id.display_one);
+        display_two = findViewById(R.id.display_two);
 
         topText.setTypeface(Typeface.createFromAsset(getAssets(),"impact.ttf"));
         bottomText.setTypeface(Typeface.createFromAsset(getAssets(),"impact.ttf"));
@@ -96,11 +102,16 @@ public class GenerateButton extends AppCompatActivity {
         topText.setText(top_text);
 
         bottomText.setText(bottom_text);
-        topText.setTextColor(Color.rgb(red, green, blue));
-        bottomText.setTextColor(Color.rgb(red, green, blue));
-        Picasso.get().load(url).resize(1000, 1000)
-                .centerCrop().into(display);
-
+        topText.setTextColor(Color.rgb(red1, green1, blue1));
+        bottomText.setTextColor(Color.rgb(red2, green2, blue2));
+        if(url1 != "") {
+            Picasso.get().load(url1).resize(1000, 1000)
+                    .centerCrop().into(display_one);
+        }
+        if(url2 != "") {
+            Picasso.get().load(url2).resize(1000, 1000)
+                    .centerCrop().into(display_two);
+        }
 
 
     }
