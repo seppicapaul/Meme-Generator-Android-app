@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 public class OneImage extends AppCompatActivity {
 
     private Button generate_button, background_button, color_button_1, color_button_2;
@@ -108,6 +110,7 @@ public class OneImage extends AppCompatActivity {
                 url = data.getStringExtra(Image.imgurl);
                 Toast.makeText(this, url, Toast.LENGTH_LONG).show();
             }
+            background_button.setBackgroundResource(R.drawable.selected);
         }
     }
 }

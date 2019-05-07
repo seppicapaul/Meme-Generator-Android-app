@@ -25,7 +25,7 @@
         android:layout_width="250dp"
         android:layout_height="225dp"
         android:layout_margin="10dp"
-        android:background="@drawable/picture"
+        android:background="@drawable/image2copy"
         android:gravity="bottom|center" />
     <TextView
         android:layout_gravity="right"
@@ -40,7 +40,7 @@
         android:id="@+id/two_image"
         android:layout_width="250dp"
         android:layout_height="225dp"
-        android:background="@drawable/foreground"
+        android:background="@drawable/foreground2"
         android:layout_margin="10dp"
         android:gravity="bottom|center"
         />
