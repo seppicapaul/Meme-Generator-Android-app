@@ -11,7 +11,7 @@
         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
         android:layout_width="370dp"
         android:layout_height="match_parent"
-        android:text="Saved"
+        android:text="Create"
         android:fontFamily="sans-serif-medium"
         android:textColor="@color/black"
         android:backgroundTint="@color/teal"

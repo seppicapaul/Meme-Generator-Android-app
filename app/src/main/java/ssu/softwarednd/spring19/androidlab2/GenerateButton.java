@@ -17,6 +17,8 @@ import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.text.DateFormat;
+import java.util.Date;
 
 
 public class GenerateButton extends AppCompatActivity {
@@ -29,6 +31,7 @@ public class GenerateButton extends AppCompatActivity {
     private TextView topText;
     private TextView bottomText;
     private Button save_button;
+    private String location;
 
 
 
@@ -48,7 +51,8 @@ public class GenerateButton extends AppCompatActivity {
             public void onClick(View view){
                 content.setDrawingCacheEnabled(true);
                 bitmap = content.getDrawingCache();
-                save_location = new File(getFilesDir(), "temp_name"); //change this to date:time
+                location = String.valueOf(fileList().length + 1);
+                save_location = new File(getFilesDir(), location); //change this to date:time
                 try {
                     FileOutputStream ostream = new FileOutputStream(save_location);
                     bitmap.compress(Bitmap.CompressFormat.PNG, 10, ostream);
@@ -60,8 +64,10 @@ public class GenerateButton extends AppCompatActivity {
                 }
                 generate.setText("Done");
 
-                save_location = new File(getFilesDir(), fileList()[0]);
-                bitmap = BitmapFactory.decodeFile(save_location.getAbsolutePath());
+                Intent intent = new Intent(GenerateButton.this, SavedActivity.class);
+                startActivity(intent);
+                //save_location = new File(getFilesDir(), fileList()[0]);
+                //bitmap = BitmapFactory.decodeFile(save_location.getAbsolutePath());
                 //     display.setImageBitmap(bitmap);
             }
         });

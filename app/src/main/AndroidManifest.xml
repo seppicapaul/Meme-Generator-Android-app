@@ -30,7 +30,9 @@
         <activity android:name=".ColorButton" />
         <activity android:name=".TextButton" />
         <activity android:name=".SecondTextButton" />
-        <activity android:name=".OneImage"></activity>
+        <activity android:name=".OneImage"/>
+        <activity android:name=".SavedActivity" >
+        </activity>
     </application>
 
 </manifest>

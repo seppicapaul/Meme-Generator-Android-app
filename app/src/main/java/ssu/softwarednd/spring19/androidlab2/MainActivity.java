@@ -9,6 +9,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     private Button twoImage;
     private Button oneImage;
+    private Button saved_activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +17,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         twoImage = findViewById(R.id.two_image);
         oneImage = findViewById(R.id.one_image);
+        saved_activity = findViewById(R.id.saved_button);
+
+        saved_activity.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(MainActivity.this, SavedActivity.class);
+                startActivity(intent);
+            }
+        });
 
         twoImage.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -32,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
     }
 }
