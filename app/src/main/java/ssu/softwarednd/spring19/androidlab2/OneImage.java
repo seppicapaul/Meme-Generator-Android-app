@@ -110,7 +110,8 @@ public class OneImage extends AppCompatActivity {
                 url = data.getStringExtra(Image.imgurl);
                 Toast.makeText(this, url, Toast.LENGTH_LONG).show();
             }
-            background_button.setBackgroundResource(R.drawable.selected);
+            if(url != null)
+                background_button.setBackgroundResource(R.drawable.selected);
         }
     }
 }
