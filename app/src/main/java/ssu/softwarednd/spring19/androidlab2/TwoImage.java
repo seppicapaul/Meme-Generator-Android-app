@@ -118,12 +118,14 @@ public class TwoImage extends AppCompatActivity {
                 burl = data.getStringExtra(Image.imgurl);
                 Toast.makeText(this, burl, Toast.LENGTH_LONG).show();
             }
+            background_button.setBackgroundResource(R.drawable.selected);
         }
         else if (requestCode == fimage_return) {
             if (resultCode == RESULT_OK) {
                 furl = data.getStringExtra(Image.imgurl);
                 Toast.makeText(this, furl, Toast.LENGTH_LONG).show();
             }
+            foreground_button.setBackgroundResource(R.drawable.selected);
         }
     }
 }

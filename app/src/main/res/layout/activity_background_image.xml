@@ -5,15 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Image">
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
+
 
     <EditText
         android:id="@+id/search_edit_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:hint="image"
         android:inputType="text"
         app:layout_constraintEnd_toStartOf="@id/image_search_button"
@@ -24,7 +21,6 @@
         android:id="@+id/image_search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:text="Search!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

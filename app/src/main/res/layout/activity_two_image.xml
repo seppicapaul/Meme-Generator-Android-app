@@ -6,10 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".TwoImage">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -75,23 +71,38 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
-        <Button
-            android:id="@+id/background_button"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/background_button_text" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/foreground_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/foreground_button_text" />
+                <Button
+                    android:id="@+id/background_button"
+                    android:layout_width="185dp"
+                    android:layout_height="185dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/picture"
+                    android:gravity="bottom|center"
+                    android:text="Background" />
+
+
+
+            <Button
+                android:id="@+id/foreground_button"
+                android:layout_width="185dp"
+                android:layout_height="185dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/picture"
+                android:gravity="bottom|center"
+                android:text="Foreground" />
+        </LinearLayout>
 
         <LinearLayout
             android:gravity="center|bottom"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dip"
+            android:paddingBottom="5dp"
             android:orientation="vertical">
 
             <Button
