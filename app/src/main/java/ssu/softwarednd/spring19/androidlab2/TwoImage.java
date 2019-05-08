@@ -11,12 +11,13 @@ import android.widget.Toast;
 
 public class TwoImage extends AppCompatActivity {
 
-    private Button generate_button, background_button, color_button, foreground_button;
+    private Button generate_button, background_button, color_button_1, color_button_2, foreground_button;
     private EditText text_button, second_text_button;
-    private int red, green, blue;
+    private int red1, green1, blue1, red2, green2, blue2;
     private String burl;
     private String furl;
-    private static final int color_return = 1;
+    private static final int color_return_one = 1;
+    private static final int color_return_two = 5;
     private static final int bimage_return = 2;
     private static final int fimage_return = 3;
 
@@ -35,11 +36,14 @@ public class TwoImage extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 bundle.putString("TOP_TEXT", topText);
                 bundle.putString("BOTTOM_TEXT", bottomText);
-                bundle.putInt("RED", red);
-                bundle.putInt("GREEN", green);
-                bundle.putInt("BLUE", blue);
-                bundle.putString("BURL", burl);
-                bundle.putString("FURL", furl);
+                bundle.putInt("RED1", red1);
+                bundle.putInt("GREEN1", green1);
+                bundle.putInt("BLUE1", blue1);
+                bundle.putInt("RED2", red2);
+                bundle.putInt("GREEN2", green2);
+                bundle.putInt("BLUE2", blue2);
+                bundle.putString("URL1", burl);
+                bundle.putString("URL2", furl);
 
                 Intent generate = new Intent(TwoImage.this, GenerateButton.class);
                 generate.putExtras(bundle);
@@ -60,13 +64,22 @@ public class TwoImage extends AppCompatActivity {
 
         second_text_button = findViewById(R.id.second_text_button);
 
-        color_button = findViewById(R.id.color_button);
-        color_button.setOnClickListener(new View.OnClickListener(){
+
+        color_button_1 = findViewById(R.id.color_button_1);
+        color_button_1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(TwoImage.this, ColorButton.class);
-                startActivityForResult(intent, color_return);
+                startActivityForResult(intent, color_return_one);
+            }
+        });
 
+        color_button_2 = findViewById(R.id.color_button_2);
+        color_button_2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(TwoImage.this, ColorButton.class);
+                startActivityForResult(intent, color_return_two);
             }
         });
 
@@ -84,14 +97,20 @@ public class TwoImage extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == color_return) {
+        if (requestCode == color_return_one) {
             if (resultCode == RESULT_OK) {
-                red = data.getIntExtra("red", 0);
-                green = data.getIntExtra("green", 0);
-                blue = data.getIntExtra("blue", 0);
-                color_button.setTextColor(Color.rgb(red,green,blue));
-                //color_button.setBackgroundColor(Color.rgb(red, green, blue));
-                //color_button.setText("");
+                red1 = data.getIntExtra("red", 0);
+                green1 = data.getIntExtra("green", 0);
+                blue1 = data.getIntExtra("blue", 0);
+                color_button_1.setTextColor(Color.rgb(red1,green1,blue1));
+            }
+        }
+        else if (requestCode == color_return_two) {
+            if (resultCode == RESULT_OK) {
+                red2 = data.getIntExtra("red", 0);
+                green2 = data.getIntExtra("green", 0);
+                blue2 = data.getIntExtra("blue", 0);
+                color_button_2.setTextColor(Color.rgb(red2,green2,blue2));
             }
         }
         else if (requestCode == bimage_return) {
